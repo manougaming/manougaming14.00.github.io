@@ -1,0 +1,193 @@
+<!doctype html>
+<html class="landing" lang="ar" manifest="cache.appcache">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Manou Gaming</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+html, body {
+    min-height: 100%;
+    margin: 0;
+    background-color: transparent;
+}
+
+body {
+    background-image: url("background.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.byline {
+    background: transparent !important;
+}
+/* Neon effect for all options */
+.opt {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+    margin: 6px;
+    border: 1px solid #7d05ca;
+    border-radius: 8px;
+    color: white;
+    background: rgba(125, 5, 202, 0.12);
+    box-shadow: 0 0 8px #7d05ca;
+    transition: 0.3s ease;
+}
+
+.opt:hover {
+    background: rgba(125, 5, 202, 0.3);
+    box-shadow: 0 0 10px #b84aff,
+                0 0 25px #7d05ca;
+}
+
+/* Selected option */
+.opt:has(input:checked) {
+    border-color: #d580ff;
+    box-shadow: 0 0 10px #b84aff,
+                0 0 25px #7d05ca,
+                inset 0 0 10px rgba(125, 5, 202, 0.3);
+}
+
+/* Radio and checkbox */
+.opt input {
+    accent-color: #b84aff;
+}
+
+/* Start button */
+/* PS4-HEN & GoldHEN - Yellow Neon */
+.opt:not(.opt-auto) {
+    background: #ffd600 !important;
+    color: #111 !important;
+    border: 1px solid #fff176 !important;
+    box-shadow:
+        0 0 8px #ffeb3b,
+        0 0 20px #ffd600,
+        0 0 35px rgba(255, 214, 0, 0.8);
+    transition: 0.3s ease;
+}
+
+/* Hover Yellow */
+.opt:not(.opt-auto):hover {
+    background: #ffea00 !important;
+    box-shadow:
+        0 0 12px #fff176,
+        0 0 30px #ffd600;
+    transform: scale(1.04);
+}
+
+/* Selected Yellow */
+.opt:not(.opt-auto):has(input:checked) {
+    background: #ffd600 !important;
+    box-shadow:
+        0 0 12px #fff176,
+        0 0 30px #ffd600;
+}
+
+/* Radio buttons */
+.opt input {
+    accent-color: #222;
+}
+
+/* Start - Green Neon */
+.btn {
+    background: #00c853 !important;
+    color: white !important;
+    border: 1px solid #69f0ae !important;
+    box-shadow:
+        0 0 10px #00e676,
+        0 0 25px #00c853,
+        0 0 40px rgba(0, 200, 83, 0.7);
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    background: #00e676 !important;
+    box-shadow:
+        0 0 15px #69f0ae,
+        0 0 35px #00e676;
+    transform: scale(1.05);
+}
+
+/* Autostart - Pale Blue */
+.opt-auto {
+    background: #a7d8f0 !important;
+    color: #102b3a !important;
+    border: 1px solid #d6f1ff !important;
+    box-shadow:
+        0 0 8px #a7d8f0,
+        0 0 20px rgba(167, 216, 240, 0.8);
+    transition: 0.3s ease;
+}
+
+.opt-auto:hover {
+    background: #c5eaff !important;
+    box-shadow:
+        0 0 12px #d6f1ff,
+        0 0 30px #a7d8f0;
+    transform: scale(1.04);
+}
+
+.opt-auto input {
+    accent-color: #287ba5;
+}
+.opt-auto {
+    display: flex !important;
+    width: fit-content;
+    margin: 12px auto !important;
+    justify-content: center;
+    align-items: center;
+}
+#count {
+    margin-top: 30px !important;
+}
+    </style>
+</head>
+
+    <div class="shell">
+
+
+        <main class="panel">
+
+            <p class="lede">
+                PS4 kernel exploit &middot; firmware 13.52 and 14.00
+            </p>
+
+            <form class="pick" id="pick">
+
+                <label class="opt">
+                    <input type="radio" name="payload" value="hen" />
+                    <span>ps4-hen</span>
+                </label>
+
+                <label class="opt">
+                    <input type="radio" name="payload" value="goldhen" checked />
+                    <span>GoldHEN</span>
+                </label>
+
+                <label class="opt opt-auto">
+                    <input type="checkbox" id="auto" checked />
+                    <span>autostart</span>
+                </label>
+
+                <button class="btn" type="submit">
+                    start
+                </button>
+
+                <p class="count" id="count"></p>
+                <p class="count" id="cache" aria-live="polite"></p>
+
+            </form>
+        </main>
+    </div>
+
+    <script src="launch.js"></script>
+
+</body>
+</html>
